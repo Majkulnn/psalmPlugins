@@ -16,11 +16,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Prepare cache directory
-        run: |
-          mkdir -p var/cache
-          chmod 777 var/cache
-
       - name: Build Docker image
         run: make build
 

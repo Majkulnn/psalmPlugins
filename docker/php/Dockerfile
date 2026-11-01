@@ -9,7 +9,7 @@ RUN apt-get update \
         git \
         unzip \
         ca-certificates \
-    && groupadd --gid ${GROUP_ID} appgroup \
+        gosu \
     && if ! getent group "${GROUP_ID}" >/dev/null; then \
         groupadd --gid "${GROUP_ID}" appgroup; \
     fi \
@@ -22,7 +22,6 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
-
 COPY docker/php/entrypoint.sh /usr/local/bin/entrypoint.sh
 
 RUN chmod +x /usr/local/bin/entrypoint.sh
@@ -33,7 +32,5 @@ ENV XDG_CACHE_HOME=/var/cache
 WORKDIR /app
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
-
-USER appuser
 
 CMD ["bash"]

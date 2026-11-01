@@ -8,4 +8,6 @@ mkdir -p \
     /var/cache/phpunit \
     /var/cache/php-cs-fixer
 
-exec "$@"
+chown -R appuser:"$(id -gn appuser)" /var/cache
+
+exec gosu appuser "$@"
