@@ -21,4 +21,6 @@ return new Config()
             'call_type' => 'this',
         ],
     ])
-    ->setFinder($finder);
+    ->setFinder($finder)
+    ->setCacheFile('/var/cache/php-cs-fixer/.php-cs-fixer.cache')
+;
