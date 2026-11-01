@@ -1,0 +1,14 @@
+services:
+  php:
+    container_name: psalm-plugins
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+      args:
+        USER_ID: ${UID:-1000}
+        GROUP_ID: ${GID:-1000}
+    working_dir: /app
+    volumes:
+      - ./:/app
+    stdin_open: true
+    tty: true
