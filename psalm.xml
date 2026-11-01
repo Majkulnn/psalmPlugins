@@ -11,9 +11,6 @@
         <directory name="tests" />
         <ignoreFiles>
             <directory name="vendor" />
-            <directory name="var" />
-            <directory name=".github" />
-            <directory name="docker" />
         </ignoreFiles>
     </projectFiles>
 </psalm>
