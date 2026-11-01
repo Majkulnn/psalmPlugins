@@ -2,13 +2,16 @@
 
 declare(strict_types=1);
 
+use App\DoctrineCollection\Plugin;
 use PHPUnit\Framework\TestCase;
 use Psalm\Plugin\PluginEntryPointInterface;
 
 /**
  * @psalm-suppress UnusedClass
  *
- * PHPUnit discovers this test class automatically.
+ * @internal
+ *
+ * @coversNothing
  */
 final class DependencySmokeTest extends TestCase
 {
@@ -16,6 +19,13 @@ final class DependencySmokeTest extends TestCase
     {
         $this->assertTrue(
             interface_exists(PluginEntryPointInterface::class),
+        );
+    }
+
+    public function testPluginImplementsEntryPointInterface(): void
+    {
+        $this->assertTrue(
+            is_subclass_of(Plugin::class, PluginEntryPointInterface::class),
         );
     }
 }
