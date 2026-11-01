@@ -8,6 +8,7 @@
   },
   "require-dev": {
     "doctrine/collections": "^3.1",
+    "doctrine/orm": "^3.7",
     "friendsofphp/php-cs-fixer": "^3.0",
     "phpunit/phpunit": "^13.3",
     "vimeo/psalm": "^6.11"
