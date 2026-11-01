@@ -28,5 +28,8 @@ jobs:
       - name: Check coding standards
         run: make cs-check
 
+      - name: Run psalm
+        run: make psalm
+
       - name: Run PHPUnit
         run: make tests
