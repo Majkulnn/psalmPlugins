@@ -10,9 +10,13 @@ services:
     working_dir: /app
     volumes:
       - ./:/app
-      - ./var/cache:/var/cache
+      - psalm_plugins_cache:/var/cache
     environment:
       COMPOSER_CACHE_DIR: /var/cache/composer
       XDG_CACHE_HOME: /var/cache
+
     stdin_open: true
     tty: true
+
+volumes:
+  psalm_plugins_cache:

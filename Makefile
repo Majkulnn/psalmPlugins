@@ -1,4 +1,4 @@
-.PHONY: build up down bash install update psalm psalm-version php-version validate clean cs-fix cs-check tests test-version
+.PHONY: build up down bash install update psalm psalm-version php-version validate clean cs-fix cs-check tests test-version commit-check
 UID := $(shell id -u)
 GID := $(shell id -g)
 
@@ -48,3 +48,5 @@ tests:
 
 test-version:
 	$(DOCKER_COMPOSE) run --rm php vendor/bin/phpunit --version
+
+commit-check: tests cs-check psalm
