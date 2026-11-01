@@ -17,14 +17,14 @@ final class DependencySmokeTest extends TestCase
 {
     public function testPsalmPluginApiIsAvailable(): void
     {
-        self::assertTrue(
+        $this->assertTrue(
             interface_exists(PluginEntryPointInterface::class),
         );
     }
 
     public function testPluginImplementsEntryPointInterface(): void
     {
-        self::assertTrue(
+        $this->assertTrue(
             is_subclass_of(Plugin::class, PluginEntryPointInterface::class),
         );
     }

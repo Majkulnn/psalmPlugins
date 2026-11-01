@@ -16,6 +16,5 @@ final class Plugin implements PluginEntryPointInterface
     public function __invoke(
         RegistrationInterface $registration,
         ?\SimpleXMLElement $config = null,
-    ): void {
-    }
+    ): void {}
 }
